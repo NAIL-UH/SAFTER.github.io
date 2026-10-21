@@ -1,6 +1,6 @@
 # SAFTER Project Website
 
-Source for the project page of **SAFTER: Safety-Aware Filtering Through Explicit Recoverability for Robust Reinforcement Learning Under Distribution Shift**.
+Source for the project page of [SAFTER: Safety-Aware Filtering Through Explicit Recoverability for Robust Reinforcement Learning Under Distribution Shift](https://nail-uh.github.io/SAFTER.github.io/).
 
 Built from the [Nerfies](https://github.com/nerfies/nerfies.github.io) template.
 
