@@ -77,16 +77,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Learning safe policies that generalize to unseen environments is difficult under bounded actuation, where an unsafe decision may become unrecoverable.
-            Conventional control barrier function (CBF) filters enforce only instantaneous safety and ignore future recoverability.
-            We propose SAFTER (Safety-Aware Filtered Training for Efficient and Robust Reinforcement Learning), which embeds a differentiable, closed-form backup-CBF filter into Soft Actor-Critic training.
-            SAFTER unifies current safety, finite-horizon backup safety, terminal recoverability, and input admissibility into a single differentiable certificate.
-            Its CBF condition yields an exact minimum-intervention projection without iterative online optimization.
-            In quadruped navigation, SAFTER reaches 90% training success with 30.6% fewer transitions than vanilla SAC and 34.1&ndash;35.1% fewer than CBF-filtered SAC baselines.
-            In unseen environments with increasing geometric shift, it improves success by up to 49.0, 37.4, and 39.0 percentage points over CBF&ndash;RL, SEA&ndash;Nav, and CBF&ndash;CF, respectively.
-            It also outperforms a matched bCBF&ndash;QP baseline by 13.0 and 8.8 points under medium and high shift.
-            Ablations identify differentiation through the exact analytical filter Jacobian as a key source of this robustness.
-            These results show that recoverability-aware filtering can serve not only as a runtime safety shield but also as a learning mechanism for sample-efficient, robust policy learning.
+            Learning safe policies that generalize to unseen environments is difficult under bounded actuation, where an unsafe decision may become unrecoverable. Conventional control barrier function (CBF) filters enforce only instantaneous safety and ignore future recoverability. We propose SAFTER (Safety-Aware Filtering Through Explicit Recoverability), which embeds a differentiable, closed-form backup-CBF filter into Soft Actor-Critic training. SAFTER unifies current safety, finite-horizon backup safety, terminal recoverability, and input admissibility into a single differentiable certificate. Its CBF condition yields an exact minimum-intervention projection without iterative online optimization. In quadruped navigation, SAFTER reaches 90% training success with 30.6% fewer transitions than Vanilla SAC and 34.1–35.1% fewer than current-state CBF-filtered SAC baselines. Across unseen simulated environments, SAFTER improves success by up to 42.4 and 61.4 percentage points over the state-of-the-art methods CBF–RL and SEA–Nav, respectively, and achieves 73.3% and 76.7% success on two real-world navigation maps. Ablations identify accurate differentiation through the safety filter as a key contributor to robustness, in which replacing the projection Jacobian with the identity approximation reduces success rate in a High-Shift environment from 61.4% to 6.2%. These results show that recoverability-aware filtering serves as both a runtime safety mechanism and a learning mechanism for sample-efficient, robust policies.
           </p>
         </div>
       </div>
@@ -210,6 +201,31 @@
       </div>
     </div>
 
+    
+    <!-- Real-world experiment video -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10 has-text-centered">
+    
+        <h4 class="title is-5">
+          Real-World Quadruped Navigation
+        </h4>
+    
+        <video controls muted playsinline preload="metadata"
+               style="width: 100%; height: auto; border-radius: 8px;">
+          <source src="./static/videos/go2_real_world_compressed.mp4"
+                  type="video/mp4">
+        </video>
+    
+        <p class="subtitle is-6 has-text-centered"
+           style="margin-top: 1rem;">
+          Real-world navigation experiments using the
+          Unitree Go2 quadruped across two test environments.
+        </p>
+    
+      </div>
+    </div>
+
+    
     <p class="has-text-centered"><strong>Table 3.</strong> Navigation performance across unseen static environments (mean &plusmn; std across 25 evaluation-seed rates).</p>
     <div class="table-container" style="display: flex; justify-content: center;">
       <table class="table is-hoverable is-striped has-text-centered is-size-7-mobile">
