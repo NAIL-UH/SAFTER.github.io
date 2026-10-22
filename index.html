@@ -94,10 +94,9 @@
            alt="Overview of the SAFTER framework"
            style="max-width: 100%; height: auto;" />
       <h2 class="subtitle has-text-centered">
-        Overview of SAFTER. A task policy proposes a nominal command; a prescribed backup rollout evaluates finite-horizon recoverability;
-        current, future, terminal, and input-admissibility conditions are combined into one differentiable certificate;
-        and an analytical minimum-intervention projection determines the safety correction before execution.
-        During training, the critic evaluates the executed action and the actor differentiates through the same safety map.
+        Overview of SAFTER. The policy proposed a nominal commmand, and the proposed safety filter evaluate the actions under predictive backup rollout.
+        Multiple evaluation constraints were combined under one single composite constraint through Log-Sum-Exp, where the soft-minimum is obtained.
+        Under one single constraint, the safe actions can be synthesized through a closed-form solution.
       </h2>
     </div>
   </div>
@@ -219,7 +218,7 @@
         <p class="subtitle is-6 has-text-centered"
            style="margin-top: 1rem;">
           Real-world navigation experiments using the
-          Unitree Go2 quadruped across two test environments.
+          Unitree Go2 quadruped.
         </p>
     
       </div>
